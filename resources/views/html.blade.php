@@ -16,15 +16,15 @@
 </head>
     <body>
         <style>
-            h1 { color:red;}
+            h1 { color:black;}
             </style>
-            <div> class="contatier mt-4">
+            <div>
                 <h1>Workshop #HTML - FORM</h1>
                 <Form>
                     <div class="row">
                         <div class="col-sm-12 col-md-4">
                             <label for="fname">ชื่อ   </label>
-                            <
+                            
     </div>
     <div class="col">
         <input =>
