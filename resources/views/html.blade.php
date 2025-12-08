@@ -1,56 +1,110 @@
-<!-- file: resources/views/html.blade.php-->
-<!Doctype html>
-<html>
-    <head>
-        <title>ส่วนหัวของ HTML</title>
-        <link rel="stylesheel" href="">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>Workshop #HTML - FORM</title>
     <style>
         body {
-            font-family: "Sarabun", sans-serif;
+            font-family: Arial, sans-serif;
+            padding: 30px;
         }
-        </style>
-    
+        h1 {
+            text-align: center;
+        }
+        .form-container {
+            width: 450px;
+            margin: auto;
+        }
+        label {
+            font-weight: bold;
+        }
+        .row {
+            margin-bottom: 10px;
+        }
+        input, select, textarea {
+            padding: 5px;
+            margin-left: 20px;
+        }
+        textarea {
+            width: 250px;
+            height: 100px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+    </style>
 </head>
-    <body>
-        <style>
-            h1 { color:black;}
-            </style>
-            <div>
-                <h1>Workshop #HTML - FORM</h1>
-                <Form>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-4">
-                            <label for="fname">ชื่อ   </label>
-                            
+<body>
+
+<h1>Workshop #HTML - FORM</h1>
+
+<div class="form-container">
+<form>
+
+    <div class="row">
+        <label>ชื่อ</label>
+        <input type="text" name="fname">
     </div>
-    <div class="col">
-        <input =>
+
+    <div class="row">
+        <label>สกุล</label>
+        <input type="text" name="lname">
     </div>
-    </Form>
+
+    <div class="row">
+        <label>วัน/เดือน/ปีเกิด</label>
+        <input type="date" name="birthday">
     </div>
-        <h1>HTML 101</h1>
-        <h1>HTML 101</h1>
-        <h2>HTML 101</h2>
-        <h3>HTML 101</h3>
-        <hr />
-        <hr>
-        <table border="1" width="100%">
-            <thead>
-                <tr>
-                    <th>ลำดับ</th>
-                    <td>ชื่อ</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Pnut</td>
-                </tr>
-                </thead>
-</table>    
-    </body>
-</html>            
- 
+
+    <div class="row">
+        <label>อายุ</label>
+        <input type="number" name="age" style="width: 80px;">
+    </div>
+
+    <div class="row">
+        <label>เพศ</label>
+        <input type="radio" name="gender" value="ชาย"> ชาย
+        <input type="radio" name="gender" value="หญิง"> หญิง
+    </div>
+
+    <div class="row">
+        <label>รูป</label>
+        <input type="file" name="photo">
+    </div>
+
+    <div class="row">
+        <label>ที่อยู่</label>
+        <textarea name="address"></textarea>
+    </div>
+
+    <div class="row">
+        <label>สีที่ชอบ</label>
+        <select name="color">
+            <option>สีแดง</option>
+            <option>สีน้ำเงิน</option>
+            <option>สีเขียว</option>
+            <option>สีเหลือง</option>
+        </select>
+    </div>
+
+    <div class="row">
+        <label>แนวเพลงที่ชอบ</label>
+        <input type="radio" name="music" value="เพื่อชีวิต"> เพื่อชีวิต
+        <input type="radio" name="music" value="ลูกทุ่ง"> ลูกทุ่ง
+        <input type="radio" name="music" value="อื่นๆ"> อื่นๆ
+    </div>
+
+    <div class="row">
+        <input type="checkbox" name="agreement"> ยินยอมให้เก็บข้อมูล
+    </div>
+
+    <div class="buttons">
+        <button type="reset">Reset</button>
+        <button type="submit">Submit</button>
+    </div>
+
+</form>
+</div>
+
+</body>
+</html>
