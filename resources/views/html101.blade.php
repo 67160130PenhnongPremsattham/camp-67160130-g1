@@ -1,171 +1,107 @@
 @extends('template.default')
-@section('title', 'Workshop FORM')
+
 @section('content')
-<h1>Workshop #HTML - FORM</h1>
-        <form>
-                    <div class="row mt-3">
-                        <div class="col-4">
-                            <label for="fname">ชื่อ</label>
-                        </div>
-                        <div class="col">
-                            <input id="fname" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-4">
-                            <label for="fname">สกุล</label>
-                        </div>
-                        <div class="col">
-                            <input id="fname" class="form-control" ">
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-4">
-                            <label for="birthdate">วัน/เดือน/ปีเกิด</label>
-                        </div>
-                        <div class="col">
-                            <input type="date" id="birthdate" name="birthdate" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-4">
-                            <label for="fname">อายุ</label>
-                        </div>
-                        <div class="col">
-                            <input id="fname" class="form-control">
-                        </div>
-                </form>
-                <form>
-                    <div class="row mt-3">
-                        <div class="col-4">
-                            <label class="col-form-label font-weight-bold">เพศ</label>
-                        </div>
+<h1 class="mb-4 text-center">Workshop #HTML-FORM</h1>
 
-                        <div class="col">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="male" name="sex" value="MALE">
-                            <label class="form-check-label" for="male">ชาย</label>
-                        </div>
+<form id="mainForm">
+    <div class="row">
+        <div class="col-5">ชื่อ</div>
+        <div class="col-7">
+            <input type="text" id="fname" class="form-control">
+            <div class="invalid-feedback">โปรดระบุชื่อ</div>
+            <div class="valid-feedback">ถูกต้อง</div>
+        </div>
+    </div>
 
-                        <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="female" name="sex" value="FEMALE">
-                        <label class="form-check-label" for="female">หญิง</label>
-                        </div>
-                        </div>
-                    </div>
-                </form>
-                <form>
-                    <div class="row mt-3">
-                        <div class="col-4">
-                            <label class="col">รูป</label>
-                        </div>
-                        <div class="col">
-                            <label for="Picture">Select a file:</label>
-                            <input type="file" id="Picture" name="Picture">
+    <div class="row">
+        <div class="col-5">สกุล</div>
+        <div class="col-7">
+            <input type="text" id="lname" class="form-control">
+            <div class="invalid-feedback">โปรดระบุนามสกุล</div>
+            <div class="valid-feedback">ถูกต้อง</div>
+        </div>
+    </div>
 
-                        </div>
-                    </div>
-                </form>
-                <form>
-                    <div class="row mt-3">
-                        <div class="col-4">
-                            <label for="fname">ที่อยู่</label>
-                        </div>
-                        <div class="col">
-                            <textarea rows="4" cols="40"></textarea>
-                        </div>
-                    </div>
-                </form>
-                <form>
-                    <div class="row mt-3">
-                        <div class="col-4">
-                            <label for="fname">สีที่ชอบ</label>
-                        </div>
-                        <div class="col">
-                            <select class="form-select" aria-label="Default select example">
-                            <option selected>select</option>
-                            <option value="red">red</option>
-                            <option value="green">green</option>
-                            <option value="bluee">blue</option>
-                            <option value="yellow">yellow</option>
-                            </select>
+    <div class="row">
+        <div class="col-5">วัน/เดือน/ปีเกิด</div>
+        <div class="col-7">
+            <input type="date" id="dateofbirth" class="form-control">
+            <div class="invalid-feedback">โปรดเลือกวันเกิด</div>
+        </div>
+    </div>
 
-                        </div>
-                    </div>
-                </form>
+    <div class="row">
+        <div class="col-5">เพศ</div>
+        <div class="col-7">
+            <input type="radio" name="gender" id="m" value="m" class="form-check-input"> ชาย
+            <input type="radio" name="gender" id="w" value="w" class="form-check-input ms-2"> หญิง
+            <div class="invalid-feedback" id="gender-err">โปรดระบุเพศ</div>
+        </div>
+    </div>
 
-                <form>
-                    <div class="row mt-3">
-                        <div class="col-4">
-                            <label for="fname">แนวเพลงที่ชอบ</label>
-                        </div>
-                        <div class="col">
-                            <input type="checkbox" id="song1" name="song1" value="rock">
-                            <label for="color1">ร็อก</label>
-                            <input type="checkbox" id="song2" name="song2" value="pop">
-                            <label for="color2">ป๊อป</label>
-                            <input type="checkbox" id="song3" name="song3" value="looktoong">
-                            <label for="song3">ลูกทุ่ง</label>
-                        </div>
-                    </div>
-                </form>
+    <div class="row">
+        <div class="col-5">สีที่ชอบ</div>
+        <div class="col-7">
+            <select id="favoritecolor" class="form-select">
+                <option value="">เลือกสีที่ชอบ</option>
+                <option value="red">แดง</option>
+                <option value="blue">น้ำเงิน</option>
+            </select>
+            <div class="invalid-feedback">โปรดเลือกสีที่ชอบ</div>
+        </div>
+    </div>
 
-                <form>
-                    <div class="row mt-3">
-                        <div class="col-4">
-                    <input type="checkbox" id="agree" name="agree" value="agree">
-                    <label for="agree">ยินยอมให้เก็บข้อมูล</label><br>
-                        </div>
-                    </div>
-                </form>
+    <div class="row">
+        <div class="col-5">แนวเพลง</div>
+        <div class="col-7">
+            <input type="radio" name="genre" value="rock" class="form-check-input"> ร็อก
+            <input type="radio" name="genre" value="pop" class="form-check-input ms-2"> ป๊อป
+            <div class="invalid-feedback" id="genre-err">โปรดเลือกแนวเพลง</div>
+        </div>
+    </div>
 
-                <form>
-                    <div class="row mt-3">
-                        <div class="col-4">
+    <div class="row mt-3">
+        <div class="col-12">
+            <input type="checkbox" id="consent_check" class="form-check-input">
+            <label for="consent_check">ยินยอมให้เก็บข้อมูล</label>
+            <div class="invalid-feedback">โปรดกดยินยอม</div>
+        </div>
+    </div>
 
-                        </div>
-                        <div class="col">
-                            <input type="reset" value="Reset" class="btn btn-warning">
-                            <input type="submit" value="Submit" class="btn btn-success">
+    <div class="d-flex justify-content-between mt-4">
+        <button type="reset" class="btn btn-outline-dark">Reset</button>
+        <button type="button" onclick="clickMe()" class="btn btn-dark px-4">Submit</button>
+    </div>
+</form>
+@endsection
 
-                        </div>
-                    </div>
-                    <div class ="row mt-3">
-                        <div class="col">
-                            <button class="btn btn-light" type="reset">Reset</button>
-</div>
-</div>
-                </form>
-                @endsection
+@push('scripts')
+<script>
+let clickMe = function() {
+    let ids = ['fname', 'lname', 'dateofbirth', 'favoritecolor', 'consent_check'];
 
-                @push('scripts')
-                    <script>
-                        let clickMe = function (){
-                            let fname = document.getElementById('fname')
-                            //fname.Value - "from ClickMe"
-                            //console.log(fname.value)
+    // ตรวจสอบช่องทั่วไป
+    ids.forEach(id => {
+        let el = document.getElementById(id);
+        let isOk = (id === 'consent_check') ? el.checked : el.value.trim() !== "";
+        if (isOk) {
+            el.classList.remove('is-invalid');
+            el.classList.add('is-valid');
+        } else {
+            el.classList.remove('is-valid');
+            el.classList.add('is-invalid');
+        }
+    });
 
-                            if(fname.value == ""){
-                                fname.classList.remove('si-valid')
-                                fname.
-                            }
-                        }
-
-                        let myfunc = (callback)=>{
-                            callback("in Callback")
-                        }
-
-                        callMe = (param) => {
-                            console.log(param)
-                        }
-
-                        myfunc(callMe)
-
-                        let myvar1 = 1
-                        let myvar2 = "1"
-                        myvar2 = parseInt(myvar2)
-
-                        console.log(myvar2 + myvar1)
-                        console.log(1 == '1')
-                    </script>
-                @endpush
+    // ตรวจสอบ Radio (เพศ และ เพลง)
+    ['gender', 'genre'].forEach(name => {
+        let radios = document.querySelectorAll(`input[name="${name}"]`);
+        let isChecked = document.querySelector(`input[name="${name}"]:checked`);
+        radios.forEach(r => {
+            if (isChecked) { r.classList.remove('is-invalid'); r.classList.add('is-valid'); }
+            else { r.classList.remove('is-valid'); r.classList.add('is-invalid'); }
+        });
+    });
+}
+</script>
+@endpush
