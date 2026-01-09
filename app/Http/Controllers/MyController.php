@@ -47,4 +47,6 @@ class MyController extends Controller
         // แก้ไขการเรียกชื่อไฟล์ให้ถูกต้องตามโครงสร้างที่คุณมี
         return view('template.html101_view', $data);
     }
+
+
 }
